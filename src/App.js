@@ -20,12 +20,16 @@ function App() {
     setTodos(newTodos)
   }
 
+  function addToDo(todo){
+    setTodos([...todos, todo]);
+  }
+
   return (
     <VStack p={4}>
     <IconButton icon={<BsLightbulbFill/>} isRound='true' size='lg' alignSelf="flex-end" />
       <Heading mb="8" fontWeight="extrabold" size="2xl" bgGradient='linear(to-r, red.500, red.300, orange.500)' bgClip="text">Todo Application</Heading>
         <TodoList p={4} todos={todos} deleteTodo={deleteTodo}/>
-        <AddToDo/>
+        <AddToDo addToDo={addToDo} />
 
 
 

@@ -1,8 +1,18 @@
-import { HStack, VStack, Text, IconButton, StackDivider, Spacer} from '@chakra-ui/react'
+import { Badge, HStack, VStack, Text, IconButton, StackDivider, Spacer} from '@chakra-ui/react'
 import React from 'react'
 import {FaTrashAlt} from 'react-icons/fa'
 
 function todoList({todos, deleteTodo}){
+  if (!todos.length) {
+    return(
+      <Badge colorScheme='green' variant='solid' m='4' borderRadius='lg'>
+        Congrats! There is nothing to do!
+      </Badge>
+    )
+  }
+
+
+
         return(
         <VStack divider={<StackDivider/>} borderColor="gray.100" borderWidth='4px' p='4'
         borderRadius='lg'
