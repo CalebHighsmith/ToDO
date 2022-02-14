@@ -7,11 +7,12 @@ import {BsLightbulbFill} from 'react-icons/bs'
 import {useState, useEffect} from 'react'
 
 function App() {
-  const initialTodos = [
-    {id: 1, body:"Feed the dogs"}, {id: 2, body:"Go to the store"},
-  ];
 
-  const [todos, setTodos] = useState(initialTodos)
+  const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem('todos')) || []);
+    
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }, [todos])
 
   function deleteTodo(id){
     const newTodos = todos.filter(todo => {
