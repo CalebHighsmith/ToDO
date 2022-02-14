@@ -10,9 +10,6 @@ function todoList({todos, deleteTodo}){
       </Badge>
     )
   }
-
-
-
         return(
         <VStack divider={<StackDivider/>} borderColor="gray.100" borderWidth='4px' p='4'
         borderRadius='lg'
